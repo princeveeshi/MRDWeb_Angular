@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg bg-light shadow-lg sticky-header">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <strong>Test Application</strong>
+      <p>Building a Digital Future Together</p>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <!-- <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li> -->
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/portfolio']">Portfolio</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/about']">About</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+        </li>
+        <li class="nav-item dropdown position-static" routerLinkActive="active">
+          <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services
+            <span class="material-icons">expand_more</span>
+          </a>
+          <div class="dropdown-menu w-100 mt-0 mega-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+              <div class="row my-4">
+                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0" *ngFor="let item of data">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action" [routerLink]="item.link">
+                      <span class="material-icons" style="color: #FF725E;">{{ item.icon }}</span>
+                      {{ item.linkText }}
+                    </a>
+                    <span class="list-group-item">
+                      <ng-container *ngFor="let spanItem of item.spanText; let last = last">
+                        {{ spanItem }}
+                        <br *ngIf="!last">
+                      </ng-container>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!--  -->
+        <li class="nav-item dropdown position-static" routerLinkActive="active">
+          <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+          <div class="dropdown-menu w-100 mt-0 mega-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+              <div class="row my-4">
+                <div class="list-group list-group-flush">
+                  <a class="list-group-item list-group-item-action" [routerLink]=""> text 1</a>
+                  <a class="list-group-item list-group-item-action" [routerLink]=""> text 2</a>
+                  <a class="list-group-item list-group-item-action" [routerLink]=""> text 3</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
+        <!--  -->
+      </ul>
+    </div>
+    <button class="btn btn-light" (click)="toggleTheme()">
+      <span class="material-icons">{{ getToggleText() }}</span>
+    </button>
+    <!-- <button class="btnContactUs">LogIn</button> -->
+  </div>
+</nav>
+<router-outlet></router-outlet>
